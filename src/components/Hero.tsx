@@ -48,6 +48,31 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-pink-100 blur-3xl opacity-10"></div>
       </div>
       
+      {/* Animated GIFs */}
+      <div className="absolute left-10 top-32 w-48 h-48 z-10 hidden lg:block animate-float opacity-70 mix-blend-screen">
+        <img 
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHE4Y2pzZnk1em1pdGNtd3kzdW1nb3lndXZmN3Q5ZXdndGNqdnN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aD5euYKz5Ly7Wq4/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+      
+      <div className="absolute right-10 bottom-40 w-56 h-56 z-10 hidden lg:block animate-float2 opacity-70 mix-blend-screen">
+        <img 
+          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtlZGVvODl1OG43aXhrbGQxa2VqcGViYXY3dzNuZmYyZnhoZ2ZiZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnBZYQcnlVWxJZe/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+      
+      <div className="absolute left-1/3 bottom-20 w-40 h-40 z-10 hidden md:block animate-float3 opacity-70 mix-blend-screen">
+        <img 
+          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajJ5cHlnZDAzc20xYnZyNHRsdzhvamR5YjBsdWtxbGZjdXYxZzd5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTlzZVCIkIH0Koo/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+      
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 opacity-0 animate-fade-in">
