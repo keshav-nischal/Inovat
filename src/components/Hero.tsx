@@ -12,18 +12,12 @@ const Hero = () => {
   ];
   
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
-          
-          // Play video when in view
-          if (videoRef.current) {
-            videoRef.current.play();
-          }
         }
       },
       { threshold: 0.1 }
@@ -47,21 +41,36 @@ const Hero = () => {
   
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 pb-10">
-      {/* Clean background with subtle gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background to-background/90"></div>
+      {/* Background Pattern Shapes */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-purple-100 blur-3xl opacity-20"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-blue-100 blur-3xl opacity-20"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-pink-100 blur-3xl opacity-10"></div>
+      </div>
       
-      {/* Apple-style Video Animation */}
-      <div className="absolute inset-0 z-0 overflow-hidden opacity-30">
-        <video 
-          ref={videoRef}
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="https://www.apple.com/105/media/us/mac-pro/2019/896c36b7-0a55-4b7f-a5b5-52a84f0f7343/anim/3d-tool/large.mp4" type="video/mp4" />
-        </video>
+      {/* Animated GIFs */}
+      <div className="absolute left-10 top-32 w-48 h-48 z-10 hidden lg:block animate-float opacity-70 mix-blend-screen">
+        <img 
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHE4Y2pzZnk1em1pdGNtd3kzdW1nb3lndXZmN3Q5ZXdndGNqdnN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aD5euYKz5Ly7Wq4/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+      
+      <div className="absolute right-10 bottom-40 w-56 h-56 z-10 hidden lg:block animate-float2 opacity-70 mix-blend-screen">
+        <img 
+          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtlZGVvODl1OG43aXhrbGQxa2VqcGViYXY3dzNuZmYyZnhoZ2ZiZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnBZYQcnlVWxJZe/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+      
+      <div className="absolute left-1/3 bottom-20 w-40 h-40 z-10 hidden md:block animate-float3 opacity-70 mix-blend-screen">
+        <img 
+          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajJ5cHlnZDAzc20xYnZyNHRsdzhvamR5YjBsdWtxbGZjdXYxZzd5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTlzZVCIkIH0Koo/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-contain rounded-lg"
+        />
       </div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -81,31 +90,6 @@ const Hero = () => {
                 </h1>
               </div>
             ))}
-          </div>
-          
-          {/* Clean image grid */}
-          <div className="grid grid-cols-3 gap-2 md:gap-4 mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?q=80&w=1000" 
-                alt="Digital design" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000" 
-                alt="Team collaboration" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000" 
-                alt="Creative workspace" 
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
           
           <div ref={containerRef} className="flex flex-col md:flex-row justify-between items-start md:items-end">
@@ -128,6 +112,11 @@ const Hero = () => {
               </a>
             </div>
           </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute -top-10 right-10 w-20 h-20 rounded-full border border-gray-200 animate-float hidden md:block"></div>
+          <div className="absolute top-1/3 left-1/4 w-8 h-8 rounded-md border border-gray-200 animate-float2 hidden md:block"></div>
+          <div className="absolute bottom-32 right-1/4 w-12 h-12 rounded-lg border border-gray-200 animate-float3 hidden md:block"></div>
         </div>
       </div>
       
