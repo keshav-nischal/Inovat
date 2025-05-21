@@ -65,6 +65,21 @@
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-15deg); }
+}
+
 @layer components {
   .reveal-text {
     @apply overflow-hidden relative;
@@ -90,6 +105,29 @@
   
   .arrow-link:hover::after {
     @apply w-full;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float2 {
+    animation: float2 8s ease-in-out infinite;
+  }
+
+  .animate-float3 {
+    animation: float3 10s ease-in-out infinite;
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
