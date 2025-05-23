@@ -48,28 +48,37 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-pink-100 blur-3xl opacity-10"></div>
       </div>
       
-      {/* Animated GIFs */}
-      <div className="absolute left-10 top-32 w-48 h-48 z-10 hidden lg:block animate-float opacity-70 mix-blend-screen">
+      {/* Animated GIFs - Updated with new aesthetics */}
+      <div className="absolute left-10 top-32 w-52 h-52 z-10 hidden lg:block animate-float opacity-80 mix-blend-screen">
         <img 
-          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHE4Y2pzZnk1em1pdGNtd3kzdW1nb3lndXZmN3Q5ZXdndGNqdnN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aD5euYKz5Ly7Wq4/giphy.gif" 
+          src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXc2dm11YmlxejVkNHAwcHBvY3Fvc3dhd3Bmdnk1MHVtdHN2ZHJ2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IFrHkIglEOg8Ba/giphy.gif" 
           alt="Creative animation" 
-          className="w-full h-full object-contain rounded-lg"
+          className="w-full h-full object-cover rounded-2xl shadow-lg"
         />
       </div>
       
-      <div className="absolute right-10 bottom-40 w-56 h-56 z-10 hidden lg:block animate-float2 opacity-70 mix-blend-screen">
+      <div className="absolute right-10 bottom-40 w-60 h-60 z-10 hidden lg:block animate-float2 opacity-80 mix-blend-screen">
         <img 
-          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtlZGVvODl1OG43aXhrbGQxa2VqcGViYXY3dzNuZmYyZnhoZ2ZiZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnBZYQcnlVWxJZe/giphy.gif" 
+          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHJhdXUyYzNmZXUwaGJ6OW11NzBnYWNmc3pwOGhnbGlsaXc5OXRtdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aCVlyJ87jLJrMB2/giphy.gif" 
           alt="Creative animation" 
-          className="w-full h-full object-contain rounded-lg"
+          className="w-full h-full object-cover rounded-2xl shadow-lg"
         />
       </div>
       
-      <div className="absolute left-1/3 bottom-20 w-40 h-40 z-10 hidden md:block animate-float3 opacity-70 mix-blend-screen">
+      <div className="absolute left-1/3 bottom-20 w-44 h-44 z-10 hidden md:block animate-float3 opacity-80 mix-blend-screen">
         <img 
-          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajJ5cHlnZDAzc20xYnZyNHRsdzhvamR5YjBsdWtxbGZjdXYxZzd5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTlzZVCIkIH0Koo/giphy.gif" 
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnU1aG55czAwY3h3djg1bmw3eXdkMWpwbjkzNmk2bjBuNTJieTFtbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlQXlQ3nHykFUv6/giphy.gif" 
           alt="Creative animation" 
-          className="w-full h-full object-contain rounded-lg"
+          className="w-full h-full object-cover rounded-2xl shadow-lg"
+        />
+      </div>
+      
+      {/* Additional Aesthetic Element */}
+      <div className="absolute top-40 right-32 w-28 h-28 z-10 hidden md:block animate-float opacity-80 mix-blend-screen">
+        <img 
+          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmRoMndsbjQwdDdmM3RyZHVodXhmbnkzd2l6cnlpNnVsNGdqb291ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l378c04F2fjeZ7vH2/giphy.gif" 
+          alt="Creative animation" 
+          className="w-full h-full object-cover rounded-2xl shadow-lg"
         />
       </div>
       
@@ -100,8 +109,9 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 opacity-0" style={{ animationDelay: '1s' }}>
-              <Button className="px-8 py-6 text-lg" size="lg">
-                Start a project
+              <Button className="px-8 py-6 text-lg relative overflow-hidden group" size="lg">
+                <span className="relative z-10">Start a project</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </Button>
               
               <a 
@@ -113,10 +123,10 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Floating Elements */}
-          <div className="absolute -top-10 right-10 w-20 h-20 rounded-full border border-gray-200 animate-float hidden md:block"></div>
-          <div className="absolute top-1/3 left-1/4 w-8 h-8 rounded-md border border-gray-200 animate-float2 hidden md:block"></div>
-          <div className="absolute bottom-32 right-1/4 w-12 h-12 rounded-lg border border-gray-200 animate-float3 hidden md:block"></div>
+          {/* Floating Elements - Enhanced */}
+          <div className="absolute -top-10 right-10 w-20 h-20 rounded-full border border-gray-200 animate-float hidden md:block backdrop-blur-sm"></div>
+          <div className="absolute top-1/3 left-1/4 w-8 h-8 rounded-md border border-gray-200 animate-float2 hidden md:block backdrop-blur-sm"></div>
+          <div className="absolute bottom-32 right-1/4 w-12 h-12 rounded-lg border border-gray-200 animate-float3 hidden md:block backdrop-blur-sm"></div>
         </div>
       </div>
       
