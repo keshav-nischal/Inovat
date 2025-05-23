@@ -122,7 +122,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 opacity-0 animate-fade-in">
-            <p className="text-lg md:text-xl mb-4 font-medium">Outils • Creative Agency</p>
+            <p className="text-lg md:text-xl mb-4 font-medium">Inovat • Creative Agency</p>
           </div>
           
           <div className="mb-16">
