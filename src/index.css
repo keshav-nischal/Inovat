@@ -90,6 +90,12 @@
   50% { opacity: 1; filter: brightness(1.2); }
 }
 
+/* Add parallax effect animations */
+@keyframes floating-parallax {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 15px); }
+}
+
 @layer components {
   .reveal-text {
     @apply overflow-hidden relative;
@@ -139,6 +145,12 @@
   
   .glass-effect {
     @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+  
+  /* Add parallax element styles */
+  .parallax-element {
+    transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
   }
 }
 

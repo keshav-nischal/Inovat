@@ -12,6 +12,7 @@ const Hero = () => {
   ];
   
   const containerRef = useRef<HTMLDivElement>(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,56 +31,92 @@ const Hero = () => {
       });
     }
     
+    // Add parallax effect on scroll
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const scrollY = window.scrollY;
+        const elements = parallaxRef.current.querySelectorAll('.parallax-element');
+        
+        elements.forEach((el, index) => {
+          const speed = 0.2 + (index * 0.05);
+          const yPos = -scrollY * speed;
+          (el as HTMLElement).style.transform = `translateY(${yPos}px)`;
+        });
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
     return () => {
       if (childElements) {
         Array.from(childElements).forEach((child) => {
           observer.unobserve(child);
         });
       }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 pb-10">
-      {/* Background Pattern Shapes */}
+      {/* Background with Gradient Mesh */}
       <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet-50/20 via-transparent to-blue-50/20"></div>
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-purple-100 blur-3xl opacity-20"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-blue-100 blur-3xl opacity-20"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-pink-100 blur-3xl opacity-10"></div>
       </div>
       
-      {/* Animated GIFs - Updated with new aesthetics */}
-      <div className="absolute left-10 top-32 w-52 h-52 z-10 hidden lg:block animate-float opacity-80 mix-blend-screen">
-        <img 
-          src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXc2dm11YmlxejVkNHAwcHBvY3Fvc3dhd3Bmdnk1MHVtdHN2ZHJ2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IFrHkIglEOg8Ba/giphy.gif" 
-          alt="Creative animation" 
-          className="w-full h-full object-cover rounded-2xl shadow-lg"
-        />
-      </div>
-      
-      <div className="absolute right-10 bottom-40 w-60 h-60 z-10 hidden lg:block animate-float2 opacity-80 mix-blend-screen">
-        <img 
-          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHJhdXUyYzNmZXUwaGJ6OW11NzBnYWNmc3pwOGhnbGlsaXc5OXRtdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aCVlyJ87jLJrMB2/giphy.gif" 
-          alt="Creative animation" 
-          className="w-full h-full object-cover rounded-2xl shadow-lg"
-        />
-      </div>
-      
-      <div className="absolute left-1/3 bottom-20 w-44 h-44 z-10 hidden md:block animate-float3 opacity-80 mix-blend-screen">
-        <img 
-          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnU1aG55czAwY3h3djg1bmw3eXdkMWpwbjkzNmk2bjBuNTJieTFtbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlQXlQ3nHykFUv6/giphy.gif" 
-          alt="Creative animation" 
-          className="w-full h-full object-cover rounded-2xl shadow-lg"
-        />
-      </div>
-      
-      {/* Additional Aesthetic Element */}
-      <div className="absolute top-40 right-32 w-28 h-28 z-10 hidden md:block animate-float opacity-80 mix-blend-screen">
-        <img 
-          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmRoMndsbjQwdDdmM3RyZHVodXhmbnkzd2l6cnlpNnVsNGdqb291ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l378c04F2fjeZ7vH2/giphy.gif" 
-          alt="Creative animation" 
-          className="w-full h-full object-cover rounded-2xl shadow-lg"
-        />
+      {/* Parallax Elements */}
+      <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Geometric Shapes */}
+        <div className="parallax-element absolute left-[10%] top-[15%] w-24 h-24">
+          <div className="w-full h-full rotate-45 border-2 border-gray-200/30 shadow-xl backdrop-blur-sm"></div>
+        </div>
+        
+        <div className="parallax-element absolute right-[15%] top-[25%] w-40 h-20">
+          <div className="w-full h-full rounded-full border border-gray-200/30 shadow-xl backdrop-blur-sm"></div>
+        </div>
+        
+        <div className="parallax-element absolute left-[25%] bottom-[20%] w-32 h-32">
+          <div className="w-full h-full rotate-12 rounded-md border border-gray-200/30 shadow-xl backdrop-blur-sm"></div>
+        </div>
+        
+        <div className="parallax-element absolute right-[20%] bottom-[30%] w-48 h-48">
+          <div className="w-full h-full -rotate-12 rounded-lg border border-gray-200/30 shadow-xl backdrop-blur-sm"></div>
+        </div>
+        
+        {/* Abstract Design Elements */}
+        <div className="parallax-element absolute left-[5%] top-[35%] w-60 h-60">
+          <img 
+            src="https://assets.website-files.com/645370fab55fcec7f6b57ec8/6453975251376583c7143f0b_Group%207531.svg" 
+            alt="Abstract design" 
+            className="w-full h-full opacity-20"
+          />
+        </div>
+        
+        <div className="parallax-element absolute right-[8%] top-[40%] w-40 h-40">
+          <img 
+            src="https://assets.website-files.com/645370fab55fcec7f6b57ec8/6453a0a49d9e91c70ff00e77_texture-1.jpg" 
+            alt="Abstract texture" 
+            className="w-full h-full object-cover rounded-full mix-blend-overlay opacity-30"
+          />
+        </div>
+        
+        <div className="parallax-element absolute left-[20%] bottom-[10%] w-36 h-36">
+          <img 
+            src="https://assets.website-files.com/645370fab55fcec7f6b57ec8/6453975251376583c7143f0d_Group%207532.svg" 
+            alt="Abstract pattern" 
+            className="w-full h-full opacity-20"
+          />
+        </div>
+        
+        <div className="parallax-element absolute right-[25%] top-[15%] w-32 h-32">
+          <img 
+            src="https://assets.website-files.com/645370fab55fcec7f6b57ec8/645396398c7b9d5e85089f85_Circle%20Pattern.svg" 
+            alt="Circle pattern" 
+            className="w-full h-full opacity-20"
+          />
+        </div>
       </div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -123,10 +160,10 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Floating Elements - Enhanced */}
-          <div className="absolute -top-10 right-10 w-20 h-20 rounded-full border border-gray-200 animate-float hidden md:block backdrop-blur-sm"></div>
-          <div className="absolute top-1/3 left-1/4 w-8 h-8 rounded-md border border-gray-200 animate-float2 hidden md:block backdrop-blur-sm"></div>
-          <div className="absolute bottom-32 right-1/4 w-12 h-12 rounded-lg border border-gray-200 animate-float3 hidden md:block backdrop-blur-sm"></div>
+          {/* Floating Glowing Elements */}
+          <div className="absolute -top-10 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-purple-200/30 to-transparent backdrop-blur-sm animate-float hidden md:block"></div>
+          <div className="absolute top-1/3 left-1/4 w-8 h-8 rounded-md bg-gradient-to-br from-blue-200/30 to-transparent backdrop-blur-sm animate-float2 hidden md:block"></div>
+          <div className="absolute bottom-32 right-1/4 w-12 h-12 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
         </div>
       </div>
       
