@@ -38,7 +38,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="opacity-0 animate-on-scroll">
               <p className="text-lg md:text-xl mb-6">
-                Founded in 2023, Outils is a creative digital agency dedicated to crafting exceptional 
+                Founded in 2023, Inovat is a creative digital agency dedicated to crafting exceptional 
                 digital experiences that help brands stand out in today's competitive landscape.
               </p>
               <p className="text-lg md:text-xl">

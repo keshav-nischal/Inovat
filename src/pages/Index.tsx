@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = 'Outils - Creative Digital Agency';
+    document.title = 'Inovat - Creative Digital Agency';
   }, []);
   
   return (

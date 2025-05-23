@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
             <Link to="/" className="text-2xl font-bold">
-              Outils.
+              Inovat.
             </Link>
             
             <button
@@ -52,7 +52,7 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-medium mb-4">Connect</h3>
               <ul className="space-y-3">
-                <li><a href="mailto:hello@outils.studio" className="hover:opacity-70 transition-opacity">hello@outils.studio</a></li>
+                <li><a href="mailto:hello@inovat.studio" className="hover:opacity-70 transition-opacity">hello@inovat.studio</a></li>
                 <li><a href="tel:+11234567890" className="hover:opacity-70 transition-opacity">+1 (123) 456-7890</a></li>
                 <li><p>New York City, NY</p></li>
               </ul>
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
           
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p>© {new Date().getFullYear()} Outils. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Inovat. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex gap-6">
               <a href="#" className="text-sm hover:opacity-70 transition-opacity">Privacy Policy</a>
               <a href="#" className="text-sm hover:opacity-70 transition-opacity">Terms of Service</a>

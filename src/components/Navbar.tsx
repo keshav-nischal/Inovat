@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link to="/" className="text-2xl font-bold">
-          Outils.
+          Inovat.
         </Link>
         
         {/* Desktop navigation */}
