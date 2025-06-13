@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -44,7 +43,7 @@ const Portfolio = () => {
           const elements = entry.target.querySelectorAll('.animate-on-scroll');
           elements.forEach((el, i) => {
             (el as HTMLElement).style.animationDelay = `${i * 0.2}s`;
-            el.classList.add('animate-fade-in');
+            el.classList.add('animate-fade-in-up');
           });
         }
       },
@@ -63,58 +62,22 @@ const Portfolio = () => {
   }, []);
   
   return (
-    <section id="work" className="py-20 md:py-32 bg-secondary" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 opacity-0 animate-on-scroll">
-                Selected Work
-              </h2>
-              <p className="text-lg md:text-xl max-w-2xl opacity-0 animate-on-scroll">
-                Browse our latest projects and see how we've helped our clients achieve their goals.
-              </p>
-            </div>
-            
-            <a href="#contact" className="arrow-link mt-6 md:mt-0 opacity-0 animate-on-scroll">
-              View all projects <ArrowRight className="ml-2" size={20} />
-            </a>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {projects.map((project, index) => (
-              <div 
-                key={project.id}
-                className="group cursor-pointer hover-project-card opacity-0 animate-on-scroll"
-              >
-                <div 
-                  className="aspect-[4/3] w-full overflow-hidden rounded-lg mb-6"
-                >
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                
-                <div className="flex justify-between items-start">
-                  <div>
-                    <span className="text-sm text-muted-foreground block mb-2">{project.category}</span>
-                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground">{project.description}</p>
-                  </div>
-                  
-                  <div className="mt-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <ArrowRight className="transform -rotate-45" size={24} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <></>
   );
 };
 
 export default Portfolio;
+
+/* Add the following to your global CSS (e.g., index.css or App.css):
+.animate-fade-in-up { @apply opacity-0 translate-y-8 animate-fade-in-up; }
+.animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+@keyframes fadeInUp { to { opacity: 1; transform: none; } }
+.hover-project-card { transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s; }
+.arrow-link { position: relative; }
+.arrow-link:after { content: ''; display: block; width: 0; height: 2px; background: var(--primary); transition: width .3s; position: absolute; left: 0; bottom: -2px; }
+.arrow-link:hover:after { width: 100%; }
+.animate-spin-slow { animation: spin 18s linear infinite; }
+.animate-spin-slow-reverse { animation: spinReverse 22s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spinReverse { to { transform: rotate(-360deg); } }
+*/
