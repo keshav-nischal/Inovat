@@ -68,26 +68,11 @@
         
         {/* Parallax Elements */}
         <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-          {/* Geometric Shapes */}
-          {/* <div className="parallax-element absolute left-[10%] top-[15%] w-24 h-24">
-            <div className="w-full h-full rotate-45 border-2 border-background shadow-xl backdrop-blur-sm"></div>
-          </div>
-          */}
-          <div className="parallax-element absolute right-[15%] top-[25%] w-40 h-20">
-            <div className="w-full h-full rounded-full border border-background shadow-xl backdrop-blur-sm"></div>
-          </div>
-          
-          <div className="parallax-element absolute left-[25%] bottom-[20%] w-32 h-32">
-            <div className="w-full h-full rotate-12 rounded-md border border-background shadow-xl backdrop-blur-sm"></div>
-          </div>
+             
           
           <div className="parallax-element absolute right-[20%] bottom-[30%] w-48 h-48">
-            <div className="w-full h-full -rotate-12 rounded-lg border border-background shadow-xl backdrop-blur-sm"></div>
+            <div className="w-full h-full -rotate-12 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
           </div>
-        
-          
-        
-          
         
         </div>
         
@@ -132,11 +117,9 @@
               </div>
             </div>
             
-            {/* Floating Glowing Elements */}
-            <div className="absolute -top-10 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-purple-200/30 to-transparent backdrop-blur-sm animate-float hidden md:block"></div>
-            <div className="absolute top-1/3 left-1/4 w-8 h-8 rounded-md bg-gradient-to-br from-blue-200/30 to-transparent backdrop-blur-sm animate-float2 hidden md:block"></div>
-            <div className="absolute bottom-32 right-1/4 w-12 h-12 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
-          </div>
+            /* Floating Glowing Elements */
+                  <div className="absolute bottom-40 right-[20%] w-12 h-12 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
+                  <div className="absolute bottom-40 right-[13%] w-20 h-20 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>   </div>
         </div>
         
         <div className="absolute bottom-10 left-0 w-full overflow-hidden">
