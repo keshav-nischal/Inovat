@@ -33,12 +33,11 @@ const About = () => {
     <section id="about" className="relative py-20 md:py-32 bg-secondary/80 overflow-hidden" ref={sectionRef}>
       {/* Gradient mesh background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-secondary/20"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/10 via-transparent to-secondary/20"></div>
         <div className="absolute top-10 left-1/4 w-72 h-72 rounded-full bg-primary blur-3xl opacity-20"></div>
         <div className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-secondary blur-3xl opacity-20"></div>
         {/* Floating shapes */}
-        <div className="absolute left-[10%] top-[20%] w-16 h-16 rounded-lg bg-background/40 shadow-lg animate-float2"></div>
-        <div className="absolute right-[15%] bottom-[25%] w-24 h-12 rounded-full bg-primary/30 shadow-xl animate-float"></div>
+        <div className="absolute left-[80%] top-[20%] w-16 h-16 rounded-lg bg-background/40 shadow-lg animate-float2"></div>
       </div>
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">

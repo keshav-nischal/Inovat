@@ -117,9 +117,8 @@
               </div>
             </div>
             
-            /* Floating Glowing Elements */
                   <div className="absolute bottom-40 right-[20%] w-12 h-12 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
-                  <div className="absolute bottom-40 right-[13%] w-20 h-20 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>   </div>
+                  <div className="absolute bottom-40 right-[15%] w-20 h-20 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>   </div>
         </div>
         
         <div className="absolute bottom-10 left-0 w-full overflow-hidden">
