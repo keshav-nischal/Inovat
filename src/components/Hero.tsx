@@ -60,12 +60,12 @@
     return (
       <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 pb-10">
         {/* Background with Gradient Mesh */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-secondary/20"></div>
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-secondary blur-3xl opacity-20"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-primary blur-3xl opacity-20"></div>
-        </div>
-        
+        <div className="absolute bottom-40 right-[20%] w-12 h-12 rounded-lg bg-gradient-to-br from-blue-400/20 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
+<div className="absolute bottom-40 right-[15%] w-20 h-20 rounded-lg bg-gradient-to-br from-blue-300/20 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
+<div className="parallax-element absolute right-[20%] bottom-[30%] w-48 h-48">
+  <div className="w-full h-full -rotate-12 rounded-lg bg-gradient-to-br from-blue-400/20 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
+</div>
+
         {/* Parallax Elements */}
         <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none z-0">
              
@@ -118,10 +118,13 @@
             </div>
             
                   <div className="absolute bottom-40 right-[20%] w-12 h-12 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
-                  <div className="absolute bottom-40 right-[15%] w-20 h-20 rounded-lg bg-gradient-to-br from-violet-200/30 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>   </div>
+                  <div className="absolute bottom-40 right-[15%] w-20 h-20 rounded-lg bg-gradient-to-br from-blue-400/20 to-transparent backdrop-blur-sm animate-float3 hidden md:block"></div>
+
+                  </div>
         </div>
+        {/* <div></div> */}
         
-        <div className="absolute bottom-10 left-0 w-full overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <div className="marquee flex whitespace-nowrap animate-marquee">
             <div className="mx-4 text-5xl font-bold opacity-10">
               STRATEGY • BRANDING • DESIGN • DEVELOPMENT • STRATEGY • BRANDING • DESIGN • DEVELOPMENT •

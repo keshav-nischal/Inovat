@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -55,7 +54,15 @@ export default {
 				},
 			},
 			fontFamily: {
-				sans: ['Space Grotesk', 'sans-serif'],
+				sans: [
+					'-apple-system',
+					'BlinkMacSystemFont',
+					'Segoe UI',
+					'Roboto',
+					'Helvetica Neue',
+					'Arial',
+					'sans-serif',
+				],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

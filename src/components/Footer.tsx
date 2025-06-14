@@ -1,93 +1,52 @@
-
-import { Link } from 'react-router-dom';
-import { ArrowUp, Instagram, Twitter, Linkedin } from 'lucide-react';
+"use client"
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    });
-  };
-  
+      behavior: "smooth",
+    })
+  }
+
   return (
-    <footer className="py-16 md:py-24 bg-secondary">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
-            <Link to="/" className="text-2xl font-bold">
-              Inovat.
-            </Link>
-            
-            <button
-              onClick={scrollToTop}
-              className="mt-6 md:mt-0 flex items-center gap-2 hover:opacity-70 transition-opacity"
-              aria-label="Back to top"
-            >
-              Back to top <ArrowUp size={16} />
-            </button>
+    <footer className="relative py-16 overflow-hidden bg-black text-white">
+      {/* Glassy blur effects */}
+      <div className="absolute top-0 right-0 w-full h-full">
+        <div className="absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full bg-black-600/30 blur-[100px]"></div>
+        <div className="absolute bottom-[-10%] right-[10%] w-[60%] h-[60%] rounded-full bg-black-500/20 blur-[80px]"></div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 md:px-8">
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 mt-12">
+
+          <div className="space-y-3">
+            <p className="text-base">Terms and conditions</p>
+            <p className="text-base mt-6">Privacy policy</p>
+            <p className="text-base mt-6">Contact us</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-            <div>
-              <h3 className="text-lg font-medium mb-4">Studio</h3>
-              <ul className="space-y-3">
-                <li><a href="#about" className="hover:opacity-70 transition-opacity">About Us</a></li>
-                <li><a href="#services" className="hover:opacity-70 transition-opacity">Services</a></li>
-                <li><a href="#work" className="hover:opacity-70 transition-opacity">Projects</a></li>
-                <li><a href="#contact" className="hover:opacity-70 transition-opacity">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-medium mb-4">Services</h3>
-              <ul className="space-y-3">
-                <li><a href="#services" className="hover:opacity-70 transition-opacity">Brand Strategy</a></li>
-                <li><a href="#services" className="hover:opacity-70 transition-opacity">UI/UX Design</a></li>
-                <li><a href="#services" className="hover:opacity-70 transition-opacity">Web Development</a></li>
-                <li><a href="#services" className="hover:opacity-70 transition-opacity">Digital Marketing</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-medium mb-4">Connect</h3>
-              <ul className="space-y-3">
-                <li><a href="mailto:hello@inovat.studio" className="hover:opacity-70 transition-opacity">hello@inovat.studio</a></li>
-                <li><a href="tel:+11234567890" className="hover:opacity-70 transition-opacity">+1 (123) 456-7890</a></li>
-                <li><p>New York City, NY</p></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-medium mb-4">Follow Us</h3>
-              <div className="flex gap-6">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                  <Instagram size={20} />
-                  <span className="sr-only">Instagram</span>
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                  <Twitter size={20} />
-                  <span className="sr-only">Twitter</span>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                  <Linkedin size={20} />
-                  <span className="sr-only">LinkedIn</span>
-                </a>
-              </div>
-            </div>
+
+          <div className="space-y-3">
+            <p className="text-base">Twitter</p>
+            <p className="text-base mt-6">LinkedIn</p>
+            {/* <p className="text-base mt-6">Contact us</p> */}
           </div>
-          
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p>© {new Date().getFullYear()} Inovat. All rights reserved.</p>
-            <div className="mt-4 md:mt-0 flex gap-6">
-              <a href="#" className="text-sm hover:opacity-70 transition-opacity">Privacy Policy</a>
-              <a href="#" className="text-sm hover:opacity-70 transition-opacity">Terms of Service</a>
-            </div>
-          </div>
+
+          <div></div>
+          <div></div>
+        </div>
+
+        <div className="mt-16">
+          <p className="text-sm">© {new Date().getFullYear()} Inovat, Inc. All Rights Reserved.</p>
+        </div>
+
+        {/* Large INOVAT text in bottom right */}
+        <div className="absolute bottom-0 right-0 pointer-events-none">
+          <h1 className="text-[15vw] font-bold leading-none text-white/20">INOVAT</h1>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

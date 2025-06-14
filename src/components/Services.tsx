@@ -78,13 +78,30 @@ const Services = () => {
 	return (
 		<section
 			id="services"
-			className="py-20 md:py-32 relative bg-gradient-to-br from-background via-secondary/30 to-primary/10"
+			className="py-20 md:py-32 relative bg-gradient-to-br from-[#000000] via-[#000000] to-[#111827]"
 			ref={sectionRef}
 		>
 			{/* Decorative blurred background shapes */}
 			<div className="absolute -top-16 -left-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl z-0" />
 			<div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-2xl z-0" />
 			<div className="container mx-auto px-4 md:px-8 relative z-10">
+
+		{/* Card */}
+		{/* <h2 className="text-3xl md:text-4xl font-bold mb-4 opacity-0 animate-on-scroll text-primary">
+						Our Sucessful Projects
+					</h2> */}
+				<div className="relative mx-auto mb-28 max-w-3xl overflow-hidden rounded-2xl bg-white shadow border border-gray-700">
+					<div>
+						<img src="karamelpic.png" className="w-full object-cover" alt="" />
+					</div>
+					<div className="absolute inset-0 z-10 bg-gradient-to-t from-black"></div>
+					<div className="absolute inset-x-0 bottom-0 z-20 p-4">
+						<p className="mb-1 text-sm text-white text-opacity-80">Andrea Felsted • <time>18 Nov 2022</time></p>
+						<h3 className="text-xl font-medium text-white">Migrating to Sailboat UI</h3>
+						<p className="mt-1 text-white text-opacity-80">Sailboat UI is a modern UI component library for Tailwind CSS. Get started with 150+ open source components.</p>
+					</div>
+				</div>
+
 				<div className="max-w-6xl mx-auto">
 					<h2 className="text-3xl md:text-4xl font-bold mb-4 opacity-0 animate-on-scroll text-primary">
 						Our Services
@@ -101,7 +118,7 @@ const Services = () => {
 								className="relative group bg-card rounded-2xl shadow-lg border border-border pt-8 pb-6 px-8 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl opacity-0 animate-on-scroll overflow-hidden"
 							>
 								{/* Accent bar */}
-								<span className="absolute top-0 left-0 w-2 h-16 bg-primary rounded-br-2xl" />
+								<span className="absolute top-0 left-0 w-2 h-16 bg-blue-600 rounded-br-2xl" />
 								<span className="text-sm text-primary font-semibold">
 									{String(service.id).padStart(2, '0')}
 								</span>
