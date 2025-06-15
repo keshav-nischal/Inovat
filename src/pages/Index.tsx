@@ -7,6 +7,7 @@ import { PricingCards } from "@/components/ui/pricing-cards";
 import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { InlineWidget } from 'react-calendly';
 
 const Index = () => {
   useEffect(() => {
@@ -23,7 +24,11 @@ const Index = () => {
         <Portfolio />
         <PricingCards />
         <AnimatedTestimonialsDemo />
-        <Contact />
+        {/* <Contact /> */}
+        <InlineWidget
+          url="https://calendly.com/keshavnischal/30min"
+          styles={{ height: '100vh', width: '100%', overflow: 'hidden', border: 'none' }}
+        />
       </main>
       <Footer />
     </div>
