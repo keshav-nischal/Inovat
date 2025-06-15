@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { InlineWidget } from 'react-calendly';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -148,12 +149,8 @@ const Contact = () => {
   // );
   return(
     <>
-      <div
-        className="calendly-inline-widget"
-        data-url="https://calendly.com/keshavnischal/30min?hide_gdpr_banner=1"
-        style={{ minWidth: 320, height: 700 }}
-      ></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <InlineWidget url="https://calendly.com/keshavnischal/30min" />
+
     </>
   )
 };
